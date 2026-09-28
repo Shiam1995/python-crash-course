@@ -14,7 +14,7 @@ Files are named `exercise_<chapter>_<number>.py`, e.g. `exercise_3_4.py` is exer
 | 2 | Variables and simple data types | 2-1 – 2-11 |
 | 3 | Introducing lists | 3-1 – 3-11 |
 | 4 | Working with lists | 4-1 – 4-13 |
-| 5 | if statements | 5-1 – 5-2 (in progress) |
+| 5 | if statements | 5-1 – 5-13 |
 
 `scratchpad.py` is a place for trying things out.
 
