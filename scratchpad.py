@@ -1,15 +1,19 @@
+from threading import active_count
 
+responses = {}
 
+polling_active = True
 
-available_toppings = ['mushroom', 'olives', 'green peppers',
-                      'pepperoini', 'pineapple', 'extra cheese']
+while polling_active:
+    name = input("Enter your name: ")
+    response = input("Would you like to climb someday")
 
-requested_toppings = ['mushroom', 'french fries', 'extra cheese']
+    responses[name] = response
 
-for requested_topping in requested_toppings:
-    if requested_topping in available_toppings:
-        print("Adding " + requested_topping + ".")
-    else:
-        print("Sorry, we dont have " + requested_topping + ".")
+    repeat = input("Would you like to let someone else respond (y/n")
+    if repeat == "n":
+        polling_active = False
 
-print("Finsihed making your pizza")
+print("\n---- Poll Results---")
+for name, response in responses.items():
+    print(name + "would like to climb " + response + ".")
