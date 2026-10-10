@@ -1,19 +1,8 @@
-from threading import active_count
+import json
 
-responses = {}
+username = input("Enter your username: ")
 
-polling_active = True
-
-while polling_active:
-    name = input("Enter your name: ")
-    response = input("Would you like to climb someday")
-
-    responses[name] = response
-
-    repeat = input("Would you like to let someone else respond (y/n")
-    if repeat == "n":
-        polling_active = False
-
-print("\n---- Poll Results---")
-for name, response in responses.items():
-    print(name + "would like to climb " + response + ".")
+filename = 'username.json'
+with open(filename, 'w') as file:
+    json.dump(username, file)
+    print("We'll remember when you come back" + username)
