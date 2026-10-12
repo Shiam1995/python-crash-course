@@ -1,29 +1,13 @@
-import json
+from name_function import get_formatted_name
 
-def get_stored_username():
-    filename = 'username2.json'
-    try:
-        with open(filename) as file:
-            username = json.load(file)
-    except FileNotFoundError:
-        return None
-    else:
-        return username
+print("q to quit")
+while True:
+    first = input("Enter your first name: ")
+    if first == "q":
+        break
+    last = input("Enter your last name: ")
+    if last == "q":
+        break
 
-def get_new_username():
-    username = input("What is your name? ")
-    filename = 'username.json'
-    with open(filename, 'w') as file:
-        json.dump(username, file)
-    return username
-
-
-def greet_user():
-    username = get_stored_username()
-    if username:
-        print("Welcome " + username)
-    else:
-        username = get_new_username()
-        print("We will rememebr your username")
-
-greet_user()
+    formatted_name = get_formatted_name(first, last)
+    print("Name is " + formatted_name)
